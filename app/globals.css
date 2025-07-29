@@ -561,79 +561,62 @@ a {
   top: 41px;
 }
 
-.projects-grid {
+.projects-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.project-carousel-card {
+  flex: 0 0 280px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-carousel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-carousel-image {
   width: 100%;
-  height: 301px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-@media (max-width: 991px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.project-card {
-  width: 307px;
-  height: 299px;
-  position: relative;
-}
-
-@media (max-width: 991px) {
-  .project-card {
-    width: 100%;
-    max-width: 307px;
-  }
-}
-
-.project-image {
-  width: 307px;
-  height: 204px;
+  height: 180px;
   object-fit: cover;
 }
 
-@media (max-width: 991px) {
-  .project-image {
-    width: 100%;
-  }
-}
-
-.project-info {
-  width: 307px;
-  height: 95px;
+.project-carousel-info {
+  padding: 20px;
   background: #fff;
-  padding: 16px 28px;
 }
 
-.project-title {
-  color: #000;
+.project-carousel-title {
+  color: #182431;
   font-family: var(--font-poppins);
-  font-size: 23px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: normal;
-  width: 254px;
-  height: 34px;
-  margin-bottom: 7px;
+  line-height: 1.3;
+  margin-bottom: 8px;
 }
 
-.project-category {
-  color: #000;
+.project-carousel-category {
+  color: #fdc62f;
   font-family: var(--font-poppins);
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 600;
   line-height: normal;
-  width: 185px;
-  height: 21px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* About Section */
