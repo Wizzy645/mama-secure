@@ -118,7 +118,6 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25.237px;
 }
 
 .nav-link {
@@ -129,11 +128,19 @@ a {
   text-align: center;
   color: rgba(50, 30, 5, 1);
   display: flex;
-  padding: 10.515px;
+  padding: 11px;
   align-items: flex-start;
   gap: 7.465px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.nav-link:first-child {
+  margin-left: -4px;
+}
+
+.nav-link:nth-child(4) {
+  margin-left: 4px;
 }
 
 .mobile-menu-btn {
@@ -355,11 +362,10 @@ a {
 /* Services Section */
 .services-section-wrapper {
   width: 100%;
-  padding: 80px 20px;
-  background: #f8f9fa;
-  margin-top: -100px;
+  padding: 0 40px;
+  margin-top: -120px;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 @media (max-width: 640px) {
@@ -371,7 +377,7 @@ a {
 
 .section-header-centered {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .section-title-dark {
@@ -394,6 +400,21 @@ a {
   height: 3px;
   background: #fdc62f;
   margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 93px auto 30px 0;
+}
+
+@media (max-width: 991px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    margin: 40px auto;
+  }
 }
 
 .carousel-container {
@@ -464,12 +485,20 @@ a {
 }
 
 .service-card {
-  flex: 0 0 300px;
   background: white;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 410px;
+}
+
+.service-card:nth-child(2) {
+  height: 410px;
+}
+
+.service-carousel .service-card {
+  flex: 0 0 300px;
 }
 
 .service-card:hover {
@@ -479,13 +508,42 @@ a {
 
 .service-card-image {
   width: 100%;
-  height: 200px;
+  height: 240px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:first-child .service-card-image {
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+}
+
+.service-card:nth-child(2) .service-card-image {
+  margin-bottom: 125px;
+  padding-bottom: 19px;
+}
+
+.service-card:nth-child(3) .service-card-image {
+  padding-bottom: 17px;
 }
 
 .service-card-content {
-  padding: 24px;
+  padding: 30px 24px;
   text-align: center;
+  background: white;
+}
+
+.service-card:first-child .service-card-content {
+  height: 19px;
+}
+
+.service-card:nth-child(2) .service-card-content {
+  height: 0px;
+  margin-top: -2px;
+}
+
+.service-card:nth-child(3) .service-card-content {
+  padding: 30px 24px 10px;
 }
 
 .service-card-title {
@@ -495,7 +553,16 @@ a {
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  margin: -9px 0 16px;
+}
+
+.service-card:nth-child(2) .service-card-title {
+  margin: -5px 0 16px;
+}
+
+.service-card:nth-child(3) .service-card-title {
+  margin: -5px 0 16px;
 }
 
 .service-card-divider {
@@ -511,6 +578,10 @@ a {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
+}
+
+.service-card:nth-child(2) .service-card-description {
+  margin-top: -2px;
 }
 
 /* Projects Section */
