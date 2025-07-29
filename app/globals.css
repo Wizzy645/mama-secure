@@ -155,23 +155,26 @@ a {
 /* Hero Section */
 .hero-section {
   width: 100%;
-  height: 816px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
-              linear-gradient(105deg, rgba(0, 0, 0, 0.50) 41.07%, rgba(0, 0, 0, 0.35) 102.67%), 
+  height: 100vh;
+  min-height: 700px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+              linear-gradient(105deg, rgba(0, 0, 0, 0.50) 41.07%, rgba(0, 0, 0, 0.35) 102.67%),
               #fff;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 991px) {
   .hero-section {
-    height: 600px;
+    min-height: 600px;
   }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    height: 500px;
+    min-height: 500px;
   }
 }
 
@@ -514,18 +517,18 @@ a {
 .projects-section {
   width: 100%;
   background: #182431;
-  padding: 52px 83px 149px;
+  padding: 100px 40px;
 }
 
 @media (max-width: 991px) {
   .projects-section {
-    padding: 40px 20px;
+    padding: 80px 40px;
   }
 }
 
 @media (max-width: 640px) {
   .projects-section {
-    padding: 30px 16px;
+    padding: 60px 20px;
   }
 }
 
