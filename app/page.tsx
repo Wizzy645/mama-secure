@@ -145,103 +145,63 @@ export default function SuperEnergyHomepage() {
 
       {/* Services Section */}
       <section className="services-section-wrapper">
-        <div className="section-header-centered">
-          <h2 className="section-title-dark">Our Services</h2>
-          <div className="section-divider-centered"></div>
-        </div>
-
-        <div className="carousel-container">
-          <button
-            className="carousel-button carousel-button-left"
-            onClick={() => scrollCarousel(servicesCarouselRef, 'left')}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-
-          <div className="services-carousel" ref={servicesCarouselRef}>
-            <div className="service-card">
+        <div className="services-grid">
+          <div className="service-card">
+            <div style={{ height: '240px', overflow: 'hidden', position: 'relative', width: '100%' }}>
               <Image
                 src="https://api.builder.io/api/v1/image/assets/TEMP/917c2e8db40b350608c1932347a054662f563488"
                 alt="Oil Extraction"
-                width={300}
-                height={200}
+                width={350}
+                height={240}
                 className="service-card-image"
               />
-              <div className="service-card-content">
-                <h3 className="service-card-title">Oil Extraction</h3>
-                <div className="service-card-divider"></div>
-                <p className="service-card-description">
-                  As the world's largest green and clean energy specialist of the
-                  printing and typesetting industry. Lorem has been the industry.
-                </p>
-              </div>
             </div>
-
-            <div className="service-card">
-              <Image
-                src="https://api.builder.io/api/v1/image/assets/TEMP/d335c9a17b2b6891d555bdbd58dfe146dc1ad382"
-                alt="Pipelines Building"
-                width={300}
-                height={200}
-                className="service-card-image"
-              />
-              <div className="service-card-content">
-                <h3 className="service-card-title">Pipelines Building</h3>
-                <div className="service-card-divider"></div>
-                <p className="service-card-description">
-                  As the world's largest green and clean energy specialist of the
-                  printing and typesetting industry. Lorem has been the industry.
-                </p>
-              </div>
-            </div>
-
-            <div className="service-card">
-              <Image
-                src="https://api.builder.io/api/v1/image/assets/TEMP/1db2cc0680337e8a3edbfec599a2945f2bf4d880"
-                alt="Oil Refinement"
-                width={300}
-                height={200}
-                className="service-card-image"
-              />
-              <div className="service-card-content">
-                <h3 className="service-card-title">Oil Refinement</h3>
-                <div className="service-card-divider"></div>
-                <p className="service-card-description">
-                  As the world's largest green and clean energy specialist of the
-                  printing and typesetting industry. Lorem has been the industry.
-                </p>
-              </div>
-            </div>
-
-            <div className="service-card">
-              <Image
-                src="https://api.builder.io/api/v1/image/assets/TEMP/917c2e8db40b350608c1932347a054662f563488"
-                alt="Renewable Energy"
-                width={300}
-                height={200}
-                className="service-card-image"
-              />
-              <div className="service-card-content">
-                <h3 className="service-card-title">Renewable Energy</h3>
-                <div className="service-card-divider"></div>
-                <p className="service-card-description">
-                  Leading the transition to sustainable energy solutions with
-                  cutting-edge technology and environmental responsibility.
-                </p>
-              </div>
+            <div className="service-card-content">
+              <h3 className="service-card-title">Oil Extraction</h3>
+              <p className="service-card-description">
+                As the world's largest green and clean energy specialist of the
+                printing and typesetting industry. Lorem has been the industry.
+              </p>
             </div>
           </div>
 
-          <button
-            className="carousel-button carousel-button-right"
-            onClick={() => scrollCarousel(servicesCarouselRef, 'right')}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+          <div className="service-card">
+            <div style={{ height: '240px', overflow: 'hidden', position: 'relative', width: '100%' }}>
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/d335c9a17b2b6891d555bdbd58dfe146dc1ad382"
+                alt="Pipelines Building"
+                width={350}
+                height={240}
+                className="service-card-image"
+              />
+            </div>
+            <div className="service-card-content">
+              <h3 className="service-card-title">Pipelines Building</h3>
+              <p className="service-card-description">
+                As the world's largest green and clean energy specialist of the
+                printing and typesetting industry. Lorem has been the industry.
+              </p>
+            </div>
+          </div>
+
+          <div className="service-card">
+            <div style={{ height: '240px', overflow: 'hidden', position: 'relative', width: '100%' }}>
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/1db2cc0680337e8a3edbfec599a2945f2bf4d880"
+                alt="Oil Refinement"
+                width={350}
+                height={240}
+                className="service-card-image"
+              />
+            </div>
+            <div className="service-card-content">
+              <h3 className="service-card-title">Oil Refinement</h3>
+              <p className="service-card-description">
+                As the world's largest green and clean energy specialist of the
+                printing and typesetting industry. Lorem has been the industry.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
