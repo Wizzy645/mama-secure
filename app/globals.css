@@ -622,59 +622,56 @@ a {
 /* About Section */
 .about-section {
   width: 100%;
-  padding: 90px 135px;
+  padding: 100px 40px;
+  background: #ffffff;
   position: relative;
 }
 
 @media (max-width: 991px) {
   .about-section {
-    padding: 60px 40px;
+    padding: 80px 40px;
   }
 }
 
 @media (max-width: 640px) {
   .about-section {
-    padding: 40px 20px;
+    padding: 60px 20px;
   }
 }
 
 .about-header {
-  width: 448px;
-  height: 53px;
-  margin-bottom: 77px;
-  position: relative;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .about-title {
-  color: #000;
+  color: #182431;
   font-family: var(--font-roboto);
   font-size: 45px;
   font-weight: 400;
   line-height: normal;
-  width: 374px;
-  height: 53px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 640px) {
   .about-title {
     font-size: 32px;
-    width: 100%;
   }
 }
 
 .about-divider {
-  width: 55px;
-  height: 2px;
-  background: #fed130;
-  position: absolute;
-  left: 393px;
-  top: 41px;
+  width: 60px;
+  height: 3px;
+  background: #fdc62f;
+  margin: 0 auto;
 }
 
 .about-content {
   display: flex;
-  gap: 114px;
-  align-items: flex-start;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (max-width: 991px) {
@@ -684,41 +681,50 @@ a {
   }
 }
 
+.about-text-container {
+  flex: 1;
+}
+
 .about-text {
-  width: 682px;
-  color: #000;
+  color: #444;
   font-family: var(--font-poppins);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: normal;
-  height: 320px;
+  line-height: 1.7;
+  margin-bottom: 24px;
 }
 
 @media (max-width: 991px) {
   .about-text {
-    width: 100%;
-    font-size: 18px;
-    height: auto;
+    font-size: 16px;
+    text-align: center;
   }
 }
 
 @media (max-width: 640px) {
   .about-text {
-    font-size: 16px;
+    font-size: 15px;
+  }
+}
+
+.about-image-container {
+  flex: 0 0 500px;
+}
+
+@media (max-width: 991px) {
+  .about-image-container {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
   }
 }
 
 .about-image {
-  width: 561px;
-  height: 421px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-}
-
-@media (max-width: 991px) {
-  .about-image {
-    width: 100%;
-    max-width: 561px;
-  }
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
