@@ -13,10 +13,10 @@ const roboto = Roboto({
   weight: ['400', '500', '600', '700'],
   variable: '--font-roboto' 
 })
-const lato = Lato({ 
-  subsets: ['latin'], 
-  weight: ['400', '600', '700'],
-  variable: '--font-lato' 
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lato'
 })
 const openSans = Open_Sans({ 
   subsets: ['latin'], 
