@@ -1,13 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 
 export default function SuperEnergyHomepage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const servicesCarouselRef = useRef<HTMLDivElement>(null)
+  const projectsCarouselRef = useRef<HTMLDivElement>(null)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const scrollCarousel = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
+    if (ref.current) {
+      const scrollAmount = 320 // Card width + gap
+      const currentScroll = ref.current.scrollLeft
+      const newScroll = direction === 'left'
+        ? currentScroll - scrollAmount
+        : currentScroll + scrollAmount
+
+      ref.current.scrollTo({
+        left: newScroll,
+        behavior: 'smooth'
+      })
+    }
   }
 
   return (
@@ -127,175 +144,276 @@ export default function SuperEnergyHomepage() {
       </div>
 
       {/* Services Section */}
-      <div className="services-section">
-        <div>
-          <Image
-            src="https://api.builder.io/api/v1/image/assets/TEMP/917c2e8db40b350608c1932347a054662f563488"
-            alt="Oil Extraction"
-            width={375}
-            height={237}
-            className="service-image"
-          />
-          <div className="service-content">
-            <h3 className="service-title">Oil Extraction</h3>
-            <div className="service-divider"></div>
-            <p className="service-description">
-              As the world's largest green and clean energy specialist of the
-              printing and typesetting industry. Lorem has been the industry.
-            </p>
-          </div>
+      <section className="services-section-wrapper">
+        <div className="section-header-centered">
+          <h2 className="section-title-dark">Our Services</h2>
+          <div className="section-divider-centered"></div>
         </div>
 
-        <div>
-          <Image
-            src="https://api.builder.io/api/v1/image/assets/TEMP/d335c9a17b2b6891d555bdbd58dfe146dc1ad382"
-            alt="Pipelines Building"
-            width={375}
-            height={237}
-            className="service-image"
-          />
-          <div className="service-content">
-            <h3 className="service-title">Pipelines Building</h3>
-            <div className="service-divider"></div>
-            <p className="service-description">
-              As the world's largest green and clean energy specialist of the
-              printing and typesetting industry. Lorem has been the industry.
-            </p>
-          </div>
-        </div>
+        <div className="carousel-container">
+          <button
+            className="carousel-button carousel-button-left"
+            onClick={() => scrollCarousel(servicesCarouselRef, 'left')}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
 
-        <div>
-          <Image
-            src="https://api.builder.io/api/v1/image/assets/TEMP/1db2cc0680337e8a3edbfec599a2945f2bf4d880"
-            alt="Oil Refinement"
-            width={375}
-            height={237}
-            className="service-image"
-          />
-          <div className="service-content">
-            <h3 className="service-title">Oil Refinement</h3>
-            <div className="service-divider"></div>
-            <p className="service-description">
-              As the world's largest green and clean energy specialist of the
-              printing and typesetting industry. Lorem has been the industry.
-            </p>
+          <div className="services-carousel" ref={servicesCarouselRef}>
+            <div className="service-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/917c2e8db40b350608c1932347a054662f563488"
+                alt="Oil Extraction"
+                width={300}
+                height={200}
+                className="service-card-image"
+              />
+              <div className="service-card-content">
+                <h3 className="service-card-title">Oil Extraction</h3>
+                <div className="service-card-divider"></div>
+                <p className="service-card-description">
+                  As the world's largest green and clean energy specialist of the
+                  printing and typesetting industry. Lorem has been the industry.
+                </p>
+              </div>
+            </div>
+
+            <div className="service-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/d335c9a17b2b6891d555bdbd58dfe146dc1ad382"
+                alt="Pipelines Building"
+                width={300}
+                height={200}
+                className="service-card-image"
+              />
+              <div className="service-card-content">
+                <h3 className="service-card-title">Pipelines Building</h3>
+                <div className="service-card-divider"></div>
+                <p className="service-card-description">
+                  As the world's largest green and clean energy specialist of the
+                  printing and typesetting industry. Lorem has been the industry.
+                </p>
+              </div>
+            </div>
+
+            <div className="service-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/1db2cc0680337e8a3edbfec599a2945f2bf4d880"
+                alt="Oil Refinement"
+                width={300}
+                height={200}
+                className="service-card-image"
+              />
+              <div className="service-card-content">
+                <h3 className="service-card-title">Oil Refinement</h3>
+                <div className="service-card-divider"></div>
+                <p className="service-card-description">
+                  As the world's largest green and clean energy specialist of the
+                  printing and typesetting industry. Lorem has been the industry.
+                </p>
+              </div>
+            </div>
+
+            <div className="service-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/917c2e8db40b350608c1932347a054662f563488"
+                alt="Renewable Energy"
+                width={300}
+                height={200}
+                className="service-card-image"
+              />
+              <div className="service-card-content">
+                <h3 className="service-card-title">Renewable Energy</h3>
+                <div className="service-card-divider"></div>
+                <p className="service-card-description">
+                  Leading the transition to sustainable energy solutions with
+                  cutting-edge technology and environmental responsibility.
+                </p>
+              </div>
+            </div>
           </div>
+
+          <button
+            className="carousel-button carousel-button-right"
+            onClick={() => scrollCarousel(servicesCarouselRef, 'right')}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
-      </div>
+      </section>
 
       {/* Projects Section */}
-      <div className="projects-section">
+      <section className="projects-section">
         <div className="section-header">
           <h2 className="section-title">Our Projects</h2>
           <div className="section-divider"></div>
         </div>
 
-        <div className="projects-grid">
-          <div className="project-card">
-            <Image
-              src="https://api.builder.io/api/v1/image/assets/TEMP/48bc919086a1514ff55f1eb94121935346dba033"
-              alt="Project 1"
-              width={307}
-              height={204}
-              className="project-image"
-            />
-            <div className="project-info">
-              <h4 className="project-title">Frozen Trees In A Lake</h4>
-              <p className="project-category">DESIGN- INTERIOR OFFICE</p>
+        <div className="carousel-container">
+          <button
+            className="carousel-button carousel-button-left"
+            onClick={() => scrollCarousel(projectsCarouselRef, 'left')}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          <div className="projects-carousel" ref={projectsCarouselRef}>
+            <div className="project-carousel-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/48bc919086a1514ff55f1eb94121935346dba033"
+                alt="Solar Power Plant"
+                width={280}
+                height={180}
+                className="project-carousel-image"
+              />
+              <div className="project-carousel-info">
+                <h4 className="project-carousel-title">Solar Power Plant</h4>
+                <p className="project-carousel-category">RENEWABLE ENERGY</p>
+              </div>
+            </div>
+
+            <div className="project-carousel-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/72fdf36b5329f802072932bc0100788de0a0af58"
+                alt="Wind Energy Farm"
+                width={280}
+                height={180}
+                className="project-carousel-image"
+              />
+              <div className="project-carousel-info">
+                <h4 className="project-carousel-title">Wind Energy Farm</h4>
+                <p className="project-carousel-category">WIND POWER</p>
+              </div>
+            </div>
+
+            <div className="project-carousel-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/577dd626e0b8cd0c65801a73239c14a6918163bc"
+                alt="Hydroelectric Dam"
+                width={280}
+                height={180}
+                className="project-carousel-image"
+              />
+              <div className="project-carousel-info">
+                <h4 className="project-carousel-title">Hydroelectric Dam</h4>
+                <p className="project-carousel-category">HYDRO POWER</p>
+              </div>
+            </div>
+
+            <div className="project-carousel-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/6a15a7873e2677a5f26b955f5d188fe4ee9066d3"
+                alt="Geothermal Plant"
+                width={280}
+                height={180}
+                className="project-carousel-image"
+              />
+              <div className="project-carousel-info">
+                <h4 className="project-carousel-title">Geothermal Plant</h4>
+                <p className="project-carousel-category">GEOTHERMAL ENERGY</p>
+              </div>
+            </div>
+
+            <div className="project-carousel-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/48bc919086a1514ff55f1eb94121935346dba033"
+                alt="Smart Grid System"
+                width={280}
+                height={180}
+                className="project-carousel-image"
+              />
+              <div className="project-carousel-info">
+                <h4 className="project-carousel-title">Smart Grid System</h4>
+                <p className="project-carousel-category">GRID TECHNOLOGY</p>
+              </div>
+            </div>
+
+            <div className="project-carousel-card">
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/72fdf36b5329f802072932bc0100788de0a0af58"
+                alt="Energy Storage"
+                width={280}
+                height={180}
+                className="project-carousel-image"
+              />
+              <div className="project-carousel-info">
+                <h4 className="project-carousel-title">Energy Storage</h4>
+                <p className="project-carousel-category">BATTERY SYSTEMS</p>
+              </div>
             </div>
           </div>
 
-          <div className="project-card">
-            <Image
-              src="https://api.builder.io/api/v1/image/assets/TEMP/72fdf36b5329f802072932bc0100788de0a0af58"
-              alt="Project 2"
-              width={307}
-              height={204}
-              className="project-image"
-            />
-            <div className="project-info">
-              <h4 className="project-title">Frozen Trees In A Lake</h4>
-              <p className="project-category">DESIGN- INTERIOR OFFICE</p>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <Image
-              src="https://api.builder.io/api/v1/image/assets/TEMP/577dd626e0b8cd0c65801a73239c14a6918163bc"
-              alt="Project 3"
-              width={307}
-              height={204}
-              className="project-image"
-            />
-            <div className="project-info">
-              <h4 className="project-title">Frozen Trees In A Lake</h4>
-              <p className="project-category">DESIGN- INTERIOR OFFICE</p>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <Image
-              src="https://api.builder.io/api/v1/image/assets/TEMP/6a15a7873e2677a5f26b955f5d188fe4ee9066d3"
-              alt="Project 4"
-              width={307}
-              height={204}
-              className="project-image"
-            />
-            <div className="project-info">
-              <h4 className="project-title">Frozen Trees In A Lake</h4>
-              <p className="project-category">DESIGN- INTERIOR OFFICE</p>
-            </div>
-          </div>
+          <button
+            className="carousel-button carousel-button-right"
+            onClick={() => scrollCarousel(projectsCarouselRef, 'right')}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
-      </div>
+      </section>
 
       {/* About Section */}
-      <div className="about-section">
+      <section className="about-section">
         <div className="about-header">
           <h2 className="about-title">About our industry</h2>
           <div className="about-divider"></div>
         </div>
 
         <div className="about-content">
-          <p className="about-text">
-            As the world's largest green and clean energy specialist of the
-            printing and typesetting industry. Lorem has been the industry. As
-            the world's largest green and cleanenergy specialist of the
-            printing and typesetting industry. Lorem has been the industry. As
-            the world's largest green and clean energy specialist of the
-            printing and typesetting industry. Lorem has been the industry. As
-            the world's largest green and clean energy specialist of the
-            printing and typesetting industry. Lorem has been the industry. As
-            the world's largest green.
-          </p>
-          <Image
-            src="https://api.builder.io/api/v1/image/assets/TEMP/341893051c3299b3f8d32ccee45043e2ec930d57"
-            alt="About our industry"
-            width={561}
-            height={421}
-            className="about-image"
-          />
+          <div className="about-text-container">
+            <p className="about-text">
+              As the world's largest green and clean energy specialist, Super Energy Ltd.
+              has been at the forefront of renewable energy innovation for over two decades.
+              We specialize in sustainable energy solutions that power communities while
+              protecting our environment.
+            </p>
+            <p className="about-text">
+              Our commitment to excellence drives us to develop cutting-edge technologies
+              in solar, wind, hydro, and geothermal energy. We believe in creating a
+              sustainable future for generations to come through responsible energy practices
+              and innovative solutions.
+            </p>
+          </div>
+          <div className="about-image-container">
+            <Image
+              src="https://api.builder.io/api/v1/image/assets/TEMP/341893051c3299b3f8d32ccee45043e2ec930d57"
+              alt="About our industry"
+              width={561}
+              height={421}
+              className="about-image"
+            />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Contact Section */}
-      <div className="contact-section">
-        <h2 className="contact-title">Got any Question?</h2>
-        <p className="contact-subtitle">
-          Reach out to us . Call us at +1 (347) 849-9047
-        </p>
+      <section className="contact-section">
+        <div className="contact-content-wrapper">
+          <h2 className="contact-title">Got any Question?</h2>
+          <p className="contact-subtitle">
+            Reach out to us . Call us at +1 (347) 849-9047
+          </p>
 
-        <form className="contact-form">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="email-input"
-          />
-          <button type="submit" className="contact-btn">
-            Contact us
-          </button>
-        </form>
-      </div>
+          <form className="contact-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="email-input"
+              required
+            />
+            <button type="submit" className="contact-btn">
+              Contact us
+            </button>
+          </form>
+        </div>
+      </section>
 
       {/* Footer Section */}
       <div className="footer-section">
