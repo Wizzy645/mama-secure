@@ -730,8 +730,10 @@ a {
 /* Contact Section */
 .contact-section {
   width: 100%;
-  padding: 114px 389px 158px;
+  padding: 100px 40px;
+  background: linear-gradient(135deg, #182431 0%, #243142 100%);
   text-align: center;
+  margin-top: 40px;
 }
 
 @media (max-width: 991px) {
@@ -746,22 +748,24 @@ a {
   }
 }
 
+.contact-content-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .contact-title {
-  width: 647px;
-  color: #182431;
+  color: #ffffff;
   text-align: center;
   font-family: var(--font-lato);
   font-weight: 700;
   font-size: 48px;
-  line-height: 44px;
+  line-height: 1.2;
   letter-spacing: -0.96px;
-  height: 44px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 991px) {
   .contact-title {
-    width: 100%;
     font-size: 36px;
   }
 }
@@ -769,25 +773,21 @@ a {
 @media (max-width: 640px) {
   .contact-title {
     font-size: 28px;
-    line-height: 32px;
   }
 }
 
 .contact-subtitle {
-  width: 521px;
-  color: #182431;
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
   font-family: var(--font-open-sans);
   font-size: 20px;
-  font-weight: 700;
-  line-height: 30px;
-  height: 30px;
-  margin: 0 auto 56px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 991px) {
   .contact-subtitle {
-    width: 100%;
     font-size: 18px;
   }
 }
@@ -795,74 +795,83 @@ a {
 @media (max-width: 640px) {
   .contact-subtitle {
     font-size: 16px;
-    line-height: 24px;
   }
 }
 
 .contact-form {
-  width: 456px;
-  height: 48px;
   display: flex;
-  gap: 24px;
-  margin: 0 auto;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 640px) {
   .contact-form {
-    width: 100%;
-    max-width: 456px;
     flex-direction: column;
     gap: 16px;
-    height: auto;
   }
 }
 
 .email-input {
-  display: flex;
-  width: 320px;
-  height: 46px;
-  padding: 10px 14px;
-  align-items: center;
-  gap: 8px;
   flex: 1;
-  border-radius: 6px;
-  border: 1px solid #d5dae1;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  color: rgba(27, 28, 31, 0.75);
+  max-width: 320px;
+  height: 52px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
   font-family: var(--font-open-sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 991px) {
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #fdc62f;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 640px) {
   .email-input {
     width: 100%;
+    max-width: none;
   }
 }
 
 .contact-btn {
-  color: #fff;
+  color: #182431;
   font-family: var(--font-lato);
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   display: inline-flex;
-  padding: 12px 18px;
+  padding: 15px 30px;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-radius: 6px;
-  background: #182431;
-  box-shadow: 0 1px 2px 0 rgba(105, 81, 255, 0.05);
-  width: 112px;
-  height: 48px;
-  cursor: pointer;
+  border-radius: 8px;
+  background: #fdc62f;
   border: none;
+  height: 52px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-@media (max-width: 991px) {
+.contact-btn:hover {
+  background: #e6b42a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(253, 198, 47, 0.3);
+}
+
+@media (max-width: 640px) {
   .contact-btn {
     width: 100%;
   }
